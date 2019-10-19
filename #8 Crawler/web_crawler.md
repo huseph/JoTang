@@ -1,14 +1,14 @@
-#  
+#  Junior Crawler
+
+I simply use the method: Character Menu -> Photos Menu -> Photos -> Photos' URL -> download them.
+
+It makes me puzzled that why so many people want to take use  of the regulation of the IDs of the photos, it is not STABLE! And they ask me how to solve the problem... I am not the owner of the pages, how could I know the regulation of the photos' ID?? LET YOUR CRAWLER TO FIND THE IDS PLS!!!
 
 ## DIFFICULTIES: INFINITE SCROLLING PAGES ##
 
 I found that the pages of photos are *INFINITE SCROLLING PAGES* which means I need to find a way to make the server give me the data.
 
-
-
-
-
-
+Then I found that the pages are in the *XHR* in *Network* <!--不知道咋说，就是审查里面的Network一栏里面的XHR栏目（并不知道叫啥）-->And, fortunately, the URLs of the pages are regular. Then, my problem is solved. (To cut down my work, I simply search page 1 to 5, so I haven't to judge how much pages exactly there are. )
 
 
 
