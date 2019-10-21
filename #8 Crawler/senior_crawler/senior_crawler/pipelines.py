@@ -26,7 +26,10 @@ class SeniorCrawlerPipeline(object):
         try:
             self.conn = sqlite3.connect(self.sqlite_file)
             self.cur = self.conn.cursor()
+            #self.cur.execute('delete from news')
+            #self.conn.commit()
             self.cur.execute('create table news(title,time,department,content)')
+            self.conn.commit()
         except Exception as e:
             print(e)   
             print("数据库建立联接异常\n")
