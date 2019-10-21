@@ -26,6 +26,7 @@ class SeniorCrawlerPipeline(object):
         try:
             self.conn = sqlite3.connect(self.sqlite_file)
             self.cur = self.conn.cursor()
+            self.cur.execute('create table news(title,time,department,content)')
         except Exception as e:
             print(e)   
             print("数据库建立联接异常\n")
@@ -36,12 +37,12 @@ class SeniorCrawlerPipeline(object):
         insert_sql = 'insert into news(title,time,department,content) values("{0}","{1}","{2}","{3}")'.format(item['title'],item['time'],item['department'],item['content'])
 
         print("items = ",item)
-        #try:
-        self.cur.execute(insert_sql)
-        self.conn.commit()
-        #except Exception as e:
-           # print(e)   
-           # print("Error, faile to insert sql = ",insert_sql)
+        try:
+            self.cur.execute(insert_sql)
+            self.conn.commit()
+        except Exception as e:
+            print(e)   
+            print("Error, faile to insert sql = ",insert_sql)
         
         return item 
         
